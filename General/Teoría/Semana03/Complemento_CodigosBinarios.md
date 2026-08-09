@@ -340,16 +340,77 @@ Nota: Si se pasa de 9, se corrige sumando 6
 1001 |14
 1000 |15
 
+### Binario -> Gray
 
+### Pasos
+1. Se mantiene el primer dígito
+2. Se suma en pares de dígitos
+3. Repetir hasta acabar sin dígitos
 
-
+### Ejemplo
 ```
-1100
+Número 1100₂
+
+Proceso:
+
+1. Se mantiene primer dígito: 1
+2. Se realiza la suma de pares
+
+1 + 1 + 0 + 0
+|  \   \   \
+1   0   1   0
+
+Primer par: 11 = 0
+Segundo par: 10 = 1
+Tercer par: 00 = 0
+
+3. Finalizar y juntar todos los dígitos obtenidos: 1010
+
+Resultado final:
+1100₂
 |
 v
-1110
+1010 (G)
 ```
 
+#### Ejemplo Gráfico
 
-Primero se mantiene, luego se van sumando los siguientes
+<img src="../../../img/Bin-Gray.png" Alt="Binario a Gray" Width=400>
+
+### Gray -> Binario 
+
+### Pasos
+1. Se mantiene el primer dígito
+2. Se suma el último dígito agregado con el siguiente del original
+3. Repetir hasta acabar sin dígitos
+
+### Ejemplo
+```
+Número 1111₂
+
+Proceso:
+
+1. Se mantiene primer dígito: 1
+2. Se realiza la suma de los pares
+
+Primer par: 11 = 0
+Segundo par: 01 = 1
+Tercer par: 11 = 0
+
+1  1  1  1
+|+/|+/|+/|
+1  0  1  0
+
+3. Finalizar y juntar todos los dígitos obtenidos: 1010
+
+Resultado final:
+1111 (G)
+|
+v
+1010₂
+```
+
+#### Ejemplo Gráfico
+
+<img src="../../../img/Gray-Bin.png" Alt="Gray a Binario" Width=400>
 
