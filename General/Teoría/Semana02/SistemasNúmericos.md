@@ -107,7 +107,7 @@ Múltiples divisiones:
 ## Imagen de ejemplo Proceso
 
 
-<img src="https://uruguayeduca.anep.edu.uy/sites/default/files/exelearning/06-2026/14232/cambio_decimal.gif">
+<img src="../../img/Bin-Dec.png">
 
 
 #### Hexadecimal
@@ -169,24 +169,17 @@ Se continua entonces con 0.28 x 16 = 480 - 32 = 4.48. Se reserva el 4
 
 FA.614
 
-
 ## Bin a Hex
 
+<img src="https://www.wikihow.com/images/1/17/Convert-Binary-to-Hexadecimal-Step-11-Version-2.jpg" width="450">
 
-Cada 4 bits binario, es un hexadecimal
-<img src="https://www.wikihow.com/images/1/17/Convert-Binary-to-Hexadecimal-Step-11-Version-2.jpg">
+Se dividen en conjuntos de 4 bits, que corresponden a un valor hexadecimal
 
-
-110.11
-
-
-Se dividen en dos conjuntos de 4 bits
-
-
-0110 . 1100
-
-
-6.C
+|Ent|-|Dec
+|:---:|:---:|:---:|
+|110|.|11
+|0110|.|1100
+|6|.|C
 
 
 
