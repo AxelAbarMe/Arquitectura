@@ -375,7 +375,7 @@ v
 
 #### Ejemplo Gráfico
 
-<img src="../../../img/Bin-Gray.png" Alt="Binario a Gray" Width=400>
+<img src="../../../img/Bin-Gray.png" Alt="Binario a Gray" Width=500>
 
 ### Gray -> Binario 
 
@@ -412,5 +412,5 @@ v
 
 #### Ejemplo Gráfico
 
-<img src="../../../img/Gray-Bin.png" Alt="Gray a Binario" Width=400>
+<img src="../../../img/Gray-Bin.png" Alt="Gray a Binario" Width=500>
 
