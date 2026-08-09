@@ -107,7 +107,7 @@ Múltiples divisiones:
 ## Imagen de ejemplo Proceso
 
 
-<img src="../../img/Bin-Dec.png">
+<img src="../../../img/Bin-Dec.png" alt="Binario a Decimal">
 
 
 #### Hexadecimal
