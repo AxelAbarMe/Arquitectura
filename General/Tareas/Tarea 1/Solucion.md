@@ -206,22 +206,35 @@ evaluar_paridad()
 Desarrolle un algoritmo que reciba una dirección IPv4 ingresada por el usuario y convierta cada uno de sus cuatro octetos de formato decimal a binario de 8 bits, mostrando la dirección IPv4 resultante en formato binario.
 ```python
 def ipv4_binario():
-    ip_string = input("Ingrese una dirección IPv4: ").strip()
+    ip_string = input("Ingrese una dirección IPv4 (ej. 192.168.1.1): ").strip()
     octetos = ip_string.split(".")
     
     if len(octetos) != 4:
-        print("Formato IPv4 inválido.")
+        print("Error: El formato IPv4 debe tener exactamente 4 octetos separados por puntos.")
         return
 
     octetos_binarios = []
     for octeto in octetos:
-        valor = int(octeto)
-        # Formatear cada octeto a 8 bits rellenando con ceros a la izquierda
-        bin_8bits = format(valor, '08b')
-        octetos_binarios.append(bin_8bits)
+        try:
+            valor = int(octeto)
+            
+            # Valida el rango permitido de 0 a 255
+            if not (0 <= valor <= 255):
+                print(f"Error: El valor '{octeto}' está fuera de rango. Debe ser entre 0 y 255.")
+                return
+                
+            # Formatear cada octeto a 8 bits rellenando con ceros a la izquierda
+            bin_8bits = format(valor, '08b')
+            octetos_binarios.append(bin_8bits)
+            
+        except ValueError:
+            # Captura el error si el usuario ingresa letras o caracteres especiales
+            print(f"Error: '{octeto}' no es un número entero válido.")
+            return
 
     ip_binaria = ".".join(octetos_binarios)
     print(f"Salida: IPv4 en binario: {ip_binaria}")
 
-ipv4_a_binario()
+ipv4_binario()
+
 ```
