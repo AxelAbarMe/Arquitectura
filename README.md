@@ -9,7 +9,7 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 
 - [Semana 02 { Sistemas Numéricos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana02/SistemasN%C3%BAmericos.md) — Sistemas de numeración y sus conversiones.
 - [Semana 03 { Complemento y Códigos Binarios }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana03/Complemento_CodigosBinarios.md) — Complemento a 1, complemento a 2 y códigos binarios.
-- [Semana 04 { ASCII y ÁlgebraBool }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana04/_.md) — Código ASCII y Álgebra Booleana (con DigitalWork).
+- [Semana 04 { ASCII y ÁlgebraBool }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana04/ASCII-AlgBool.md) — Código ASCII y Álgebra Booleana (con DigitalWork).
 
 ---
 
