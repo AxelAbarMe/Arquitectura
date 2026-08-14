@@ -183,7 +183,235 @@ Suma: 207. 0.0625 + 0.05078125 + 0.0004882813
 ### a. Conversión entre sistemas numéricos
 Desarrolle algoritmos que permitan realizar la conversión de números enteros y con parte fraccionaria entre los sistemas decimal, binario y hexadecimal, mostrando el procedimiento utilizado en cada conversión.
 ```python
+# Desarrolle algoritmos que permitan realizar la conversión de números enteros y con parte fraccionaria entre los sistemas decimal, binario y hexadecimal
+# mostrando el procedimiento utilizado en cada conversión.
 
+HEXADECIMAL_DIGITS = "0123456789ABCDEF"
+PRECISION = 8  # Número de dígitos después del punto decimal para la parte fraccionaria
+
+def decimal_a_binario(decimal, neg=False, testing=False):
+    if decimal < 0:
+        decimal = -decimal
+        neg = True
+    ent = int(decimal)
+    frac = float(decimal - ent)
+    binario = ""
+    count = 0
+    if not testing:
+        print(f"--------------------------------")
+    while ent > 0:
+        if not testing:
+            print(f"Paso ENT #{count + 1}: {ent} / 2 = {ent // 2} con residuo {ent % 2}")
+        binario = str(ent % 2) + binario
+        ent //= 2
+        count += 1
+    if frac > 0:
+        if not testing:
+            print(f"--------------------------------")
+        binario += "."
+        count = 0
+        while frac > 0 and count < PRECISION:
+            if not testing:
+                print(f"Paso FRAC #{count + 1}: {frac:.2f} * 2 = {frac*2:.2f} con parte entera {int(frac * 2)}")
+            frac *= 2
+            bit = int(frac)
+            binario += str(bit)
+            frac -= bit
+            count += 1
+    if neg:
+        binario = "-" + binario
+    return binario if binario else "0"
+
+def decimal_a_hexadecimal(decimal, neg=False, testing=False):
+    if decimal < 0:
+        decimal = -decimal
+        neg = True
+    ent = int(decimal)
+    frac = float(decimal - ent)
+    hexadecimal = ""
+    count = 0
+    if not testing:
+        print(f"--------------------------------")
+    while ent > 0:
+        if not testing:
+            print(f"Paso ENT #{count + 1}: {ent} / 16 = {ent // 16} con residuo {ent % 16}")
+        residuo = ent % 16
+        hexadecimal = HEXADECIMAL_DIGITS[residuo] + hexadecimal
+        ent //= 16
+    if frac > 0:
+        if not testing:
+            print(f"--------------------------------")
+        hexadecimal += "."
+        count = 0
+        while frac > 0 and count < PRECISION//2:
+            if not testing:
+                print(f"Paso FRAC #{count + 1}: {frac:.4f} * 16 = {frac*16:.4f} con parte entera {int(frac * 16)}")
+            frac *= 16
+            bit = int(frac)
+            hexadecimal += HEXADECIMAL_DIGITS[bit]
+            frac -= bit
+            count += 1
+    if neg:
+        hexadecimal = "-" + hexadecimal
+    return hexadecimal if hexadecimal else "0"
+
+def binario_a_decimal(binario, neg=False, testing=False):
+    if binario < 0:
+        binario = -binario
+        neg = True
+    ent = int(binario)
+    frac = float(binario - ent)
+    decimal = 0
+    ent = str(ent)[::-1]  # Invertir la parte entera para facilitar el cálculo
+    frac = round(frac,6)
+    if not testing:
+        print(f"--------------------------------")
+    for i in range(len(ent)):
+        decimal += int(ent[i]) * (2 ** i)
+        if not testing:
+            print(f"Paso ENT #{i + 1}: {ent[i]} * (2^{i}) = {int(ent[i]) * (2 ** i)} Resultado acumulado: {decimal}")
+    frac = str(frac)[2:]  # Quitar "0." del inicio
+    if not testing:
+        print(f"--------------------------------")
+    for i in range(len(frac)):
+        decimal += int(frac[i]) * (2 ** -(i + 1))
+        if not testing:
+            print(f"Paso FRAC #{i + 1}: {frac[i]} * (2^-{i + 1}) = {int(frac[i]) * (2 ** -(i + 1))} Resultado acumulado: {decimal}")
+    if neg:
+        decimal = -decimal
+    return decimal
+
+def hexadecimal_a_decimal(hexadecimal, neg=False, testing=False):
+    if hexadecimal.startswith("-"):
+        hexadecimal = hexadecimal[1:]
+        neg = True
+    if "." in hexadecimal:
+        ent, frac = hexadecimal.split(".")
+    else:
+        ent, frac = hexadecimal, ""
+    decimal = 0
+    ent = ent[::-1]  # Invertir la parte entera para facilitar el cálculo
+    if not testing:
+        print(f"--------------------------------")
+    for i in range(len(ent)):
+        decimal += HEXADECIMAL_DIGITS.index(ent[i]) * (16 ** i)
+        if not testing:
+            print(f"Paso ENT #{i + 1}: {ent[i]} * (16^{i}) = {HEXADECIMAL_DIGITS.index(ent[i]) * (16 ** i)} Resultado acumulado: {decimal}")
+    if not testing:
+        print(f"--------------------------------")
+    for i in range(len(frac)):
+        decimal += HEXADECIMAL_DIGITS.index(frac[i]) * (16 ** -(i + 1))
+        if not testing:
+            print(f"Paso FRAC #{i + 1}: {frac[i]} * (16^-{i + 1}) = {HEXADECIMAL_DIGITS.index(frac[i]) * (16 ** -(i + 1))} Resultado acumulado: {decimal}")
+    if neg:
+        decimal = -decimal
+    decimal = round(decimal,4)
+    return decimal
+
+def binario_a_hexadecimal(binario, neg=False, testing=False):
+    decimal = binario_a_decimal(float(binario), neg=neg, testing=testing)
+    hexadecimal = decimal_a_hexadecimal(decimal, neg=neg, testing=testing)
+    return hexadecimal
+
+def hexadecimal_a_binario(hexadecimal, neg=False, testing=False):
+    decimal = hexadecimal_a_decimal(hexadecimal, neg=neg, testing=testing)
+    binario = decimal_a_binario(decimal, neg=neg, testing=testing)
+    return binario
+
+def test():
+    assert decimal_a_binario(10.625, testing=True) == "1010.101"
+    assert decimal_a_binario(-2.75, testing=True) == "-10.11"
+
+    assert binario_a_decimal(1010.101, testing=True) == 10.625
+    assert binario_a_decimal(-10.11, testing=True) == -2.75
+
+    assert decimal_a_hexadecimal(255.254, testing=True) == "FF.4106"
+    assert decimal_a_hexadecimal(-2754.5, testing=True) == "-AC2.8"
+
+    assert hexadecimal_a_decimal("FF.4106", testing=True) == 255.254
+    assert hexadecimal_a_decimal("-AC2.8", testing=True) == -2754.5
+
+    assert binario_a_hexadecimal("1010.101", testing=True) == "A.A"
+    assert binario_a_hexadecimal("-10.11", testing=True) == "-2.C"
+
+    assert hexadecimal_a_binario("FF.4106", testing=True) == "11111111.01000001" 
+    assert hexadecimal_a_binario("-AC2.8", testing=True) == "-101011000010.1"
+
+    print("Todos los tests pasaron correctamente.")
+
+def validate_input(value, base):
+    try:
+        if base == 2:
+            int(value, 2)
+        elif base == 10:
+            float(value)
+        elif base == 16:
+            int(value, 16)
+        return True
+    except ValueError:
+        return False
+
+def menu():
+    print("--------------------------------")
+    print("Conversión de números entre sistemas decimal, binario y hexadecimal")
+    print("Seleccione una opción:")
+    print("1. Convertir decimal a binario")
+    print("2. Convertir decimal a hexadecimal")
+    print("3. Convertir binario a decimal")
+    print("4. Convertir hexadecimal a decimal")
+    print("5. Convertir binario a hexadecimal")
+    print("6. Convertir hexadecimal a binario")
+    print("7. Salir")
+    return input("Ingrese el número de la opción deseada: ") 
+
+def main():
+    while True:
+        opcion = menu()
+        if opcion == "1":
+            decimal_input = input('Ingrese un número decimal: ')
+            if validate_input(decimal_input, 10):
+                print(f"\nEl número en binario es: {decimal_a_binario(float(decimal_input))}")
+            else:
+                print('Entrada inválida. Por favor, ingrese un número decimal válido.')
+        elif opcion == "2":
+            decimal_input = input('Ingrese un número decimal: ')
+            if validate_input(decimal_input, 10):
+                print(f"El número en hexadecimal es: {decimal_a_hexadecimal(float(decimal_input))}")
+            else:
+                print('Entrada inválida. Por favor, ingrese un número decimal válido.')
+        elif opcion == "3":
+            binario_input = input('Ingrese un número binario: ')
+            if validate_input(binario_input, 2):
+                print(f"El número en decimal es: {binario_a_decimal(float(binario_input))}")
+            else:
+                print('Entrada inválida. Por favor, ingrese un número binario válido.')
+        elif opcion == "4":
+            hexadecimal_input = input('Ingrese un número hexadecimal: ')
+            if validate_input(hexadecimal_input, 16):
+                print(f"El número en decimal es: {hexadecimal_a_decimal(hexadecimal_input)}")
+            else:
+                print('Entrada inválida. Por favor, ingrese un número hexadecimal válido.')
+        elif opcion == "5":
+            binario_input = input('Ingrese un número binario: ')
+            if validate_input(binario_input, 2):
+                print(f"El número en hexadecimal es: {binario_a_hexadecimal(binario_input)}")
+            else:
+                print('Entrada inválida. Por favor, ingrese un número binario válido.')
+        elif opcion == "6":
+            hexadecimal_input = input('Ingrese un número hexadecimal: ')
+            if validate_input(hexadecimal_input, 16):
+                print(f"El número en binario es: {hexadecimal_a_binario(hexadecimal_input)}")
+            else:
+                print('Entrada inválida. Por favor, ingrese un número hexadecimal válido.')
+        elif opcion == "7":
+            print("Saliendo...")
+            break
+        else:
+            print("Opción no válida. Por favor, ingrese un número válido.")
+
+if __name__ == "__main__":
+    test()
+    main()
 ```
 
 ### b. Detección de números pares e impares
