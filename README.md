@@ -19,6 +19,8 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 
 - [Práctica 1](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%201.md)
 - [Práctica 2](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%202.md)
+- [Práctica 3](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%203.md)
+- [Práctica 4](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%204.md)
 
 ---
 
@@ -35,5 +37,6 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 
 - [Tarea 1](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%201/Solucion.md)
 - [Tarea 2](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%202/Solucion.md)
+- [Tarea 3](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%203/Solucion.md)
 
 ---
