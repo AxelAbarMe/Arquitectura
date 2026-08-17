@@ -160,4 +160,131 @@ Esto permite mapear utilizando dicha base
 * 01 - 11 Son vecinos
 * 00 - 11 No son vecinos
 
+## F = 1
+| x\y | y` | y |
+|:--:|:--:|:--:|
+| x` | 1 | 1 |
+| x  | 1 | 1 |
+
+## F = 0
+| x\y | y` | y |
+|:--:|:--:|:--:|
+| x` | 
+| x  |
+
+
+## Mapa Karnaugh 3 variables
+
+| \ | yz |y\`z\` | y\`z | yz | yz\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|  x  | \  | 00 | 01 | 11 | 10 |
+| x` | 0 |  0 | 1 | 3 | 2
+| x  | 1 |  4 | 5 | 7 | 6
+
+Usa Sistema GRAY para que exista bit de cambio
+
+| 00 |
+|:--:|
+| 01 |
+| 11 |
+| 10 |
+
+## Ejemplo
+> F(x,y,z) = Sum(0,3,4,7)
+
+
+| \ | yz |y\`z\` | y\`z | yz | yz\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|  x  | \  | **00** | **01** | **11** | **10** |
+| x` | **0** |  1 | 0 | 1 | 0
+| x  | **1** |  1 | 0 | 1 | 0
+
+
+Al estar en la misma posicion, se alinean, de dicho mapa sale:
+
+y\`z\` + yz
+
+---
+## Ejemplo
+
+| \ | BC |B\`C\` | B\`C | BC | BC\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| A  | \  | **00** | **01** | **11** | **10** |
+| A` | **0** |  1 | 0 | 1 | 0
+| A  | **1** |  1 | 1 | 1 | 0
+
+> 5 se puede agrupar con otro grupo, 4  7. Al tomar 4 obtiene un inversor extra, AB\`. En cambio, agrupar con 7 regresa AC, no existe necesidad de un inversor.
+
+A\`B\` + BC + B\`C\`
+
+> Si hay situación de XOR o XNOR otorga una situación especial, sino el mapa entrega el mínimo
+
+## Ejemplo
+
+| \ | wz |w\`z\` | w\`z | wz | wz\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|  x  | \  | **00** | **01** | **11** | **10** |
+| x` | **0** |  1 | 1 | 1 | 1
+| x  | **1** |  1 | 1 | 0 | 1
+
+z\` + w\` + x\`
+
+> Al agrupar primeros cuatro bits de la zona de w\`, luego los bits de z\` y la fila de x\`
+
+## Ejemplo
+
+| \ | yz |y\`z\` | y\`z | yz | yz\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|  x  | \  | **00** | **01** | **11** | **10** |
+| x` | **0** |  1 | 1 | 1 | 0
+| x  | **1** |  0 | 1 | 1 | 1
+
+z + x\`y\` + xy
+
+## Ejemplo
+
+| \ | yz |y\`z\` | y\`z | yz | yz\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|  x  | \  | **00** | **01** | **11** | **10** |
+| x` | **0** |  1 | 0 | 1 | 1
+| x  | **1** |  1 | 1 | 1 | 1
+
+y + y\`z\` + x
+
+
+## Ejemplo
+
+> f(A,B,C) = Sum(0,1,2,5,7)
+
+| \ | BC |B\`C\` | B\`C | BC | BC\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| A  | \  | **00** | **01** | **11** | **10** |
+| A` | **0** |  1 | 1 | 0 | 1
+| A  | **1** |  0 | 1 | 1 | 0
+
+A\`B\` + AC + C\`A\`
+
+
+## Mapa Karnaugh 4 variables
+
+| \ | BA |B\`A\` | B\`A | BA | BA\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| DC  | \  | **00** | **01** | **11** | **10** |
+| D\`C` | **00** |  0 | 1 | 5 | 2
+| D\`C  | **01** |  4 | 5 | 7 | 6
+| DC   | **10** |  12 | 13 | 15 | 14
+| DC`  | **11** |  8 | 9 | 11 | 10
+
+## Ejemplo
+
+| \ | BA |B\`A\` | B\`A | BA | BA\`
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| DC  | \  | **00** | **01** | **11** | **10** |
+| D\`C` | **00** |  1 | 0 | 1 | 1
+| D\`C  | **01** |  0 | 1 | 1 | 1
+| DC   | **10**  |  0 | 1 | 1 | 0
+| DC`  | **11**  |  1 | 0 | 0 | 1
+
+
+C\`A\` + AC + D\`B
 
