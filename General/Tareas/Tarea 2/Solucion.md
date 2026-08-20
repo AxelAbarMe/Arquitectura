@@ -236,7 +236,7 @@ def dec_bcd(decimal):
         bits = bin(int(dec))[2:].zfill(4)
         print(f"Dígito decimal: {dec} -> Bits BCD: {bits}")
         bcd += bits
-    return bits
+    return bcd
 
 def bcd_gray(BCD):
 
@@ -322,7 +322,7 @@ def suma_bcd(BCD1,BCD2):
         return False
     n = max(len(d1),len(d2))
     bits1 = [BCD1[i:i+4] for i in range(0, len(BCD1), 4)]
-    bits2 = [BCD2[i:i+4] for i in range(0, len(BCD1), 4)]
+    bits2 = [BCD2[i:i+4] for i in range(0, len(BCD2), 4)]
 
     while len(bits1) < n:
         bits1.insert(0,'0000')
