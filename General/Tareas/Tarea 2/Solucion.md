@@ -6,7 +6,36 @@
 ### 1. Ejecute las siguientes operaciones y conversiones:
 
 * a- 11101)₂ x 101011)₂ = xxxx)₂
+
+```C++
+     101011
+      11101
+     ------
+     101011
+    000000
+   101011
+  101011
++101011
+-----------
+10011011111
+```
+
+> Respuesta `10011011111₂`
+
 * b- 101)₂ x 10101)₂ = xxxx)₂
+
+```C++
+     10101
+       101
+     -----
+     10101
+    00000
+ + 10101
+-----------
+   1101001
+```
+
+> Respuesta `1101001₂`
 
 * c- Complete las siguientes tablas:
 
@@ -14,9 +43,249 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Gray | ……………. | ……………. | ……………. | 1001 | 1110 |
 
+1. `1000`
+
+```
+Número 1000₂
+
+Proceso:
+
+1 + 0 + 0 + 0
+|  \   \   \
+1   1   0   0
+
+Primer par: 1 XOR 0 = 1
+Segundo par: 0 XOR 0 = 0
+Tercer par: 0 XOR 0 = 0
+
+Resultado final:
+1000₂
+|
+v
+1100 (G)
+```
+
+2. `0101`
+
+```
+Número 0101₂
+
+Proceso:
+
+0 + 1 + 0 + 1
+|  \   \   \
+0   1   1   1
+
+Primer par: 0 XOR 1 = 1
+Segundo par: 1 XOR 0 = 1
+Tercer par: 0 XOR 1 = 1
+
+Resultado final:
+0101₂
+|
+v
+0111 (G)
+```
+
+3. `0110`
+
+```
+Número 0110₂
+
+Proceso:
+
+0 + 1 + 1 + 0
+|  \   \   \
+0   1   0   1
+
+Primer par: 0 XOR 1 = 1
+Segundo par: 1 XOR 1 = 0
+Tercer par: 0 XOR 1 = 1
+
+Resultado final:
+0110₂
+|
+v
+0101 (G)
+```
+
+4. `1001`
+
+```
+Número 1001₂
+
+Proceso:
+
+1  0  0  1
+|+/|+/|+/|
+1  1  1  0
+
+Primer par: 1 XOR 0 = 1
+Segundo par: 1 XOR 0 = 1
+Tercer par: 1 XOR 1 = 0
+
+Resultado final:
+1001 (G)
+|
+v
+1110₂
+```
+
+5. `1110`
+
+```
+Número 1110₂
+
+Proceso:
+
+1  1  1  0
+|+/|+/|+/|
+1  0  1  0
+
+Primer par: 1 XOR 1 = 0
+Segundo par: 0 XOR 1 = 1
+Tercer par: 1 XOR 0 = 1
+
+Resultado final:
+1001 (G)
+|
+v
+1011₂
+```
+
+
+> Respuesta:
+
+| BCD | 1000 | 0101 | 0110 | `1110` | `1011` |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Gray | `1100` | `0111` | `0101` | 1001 | 1110 |
+---
+
 | Bin | 10111100 | 0101000 | 1110110 | ……………. | ……………. |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Gray | ……………. | ……………. | ……………. | 10010000 | 1111000000 |
+
+1. `10111100`
+
+```
+Número 10111100₂
+
+Proceso:
+
+1 + 0 + 1 + 1 + 1 + 1 + 0 + 0
+|  \   \   \   \   \   \   \
+1   1   1   0   0   0   1   0
+
+Primer par: 1 XOR 0 = 1
+Segundo par: 0 XOR 1 = 1
+Tercer par: 1 XOR 1 = 0
+Cuarto par: 1 XOR 1 = 0
+Quinto par: 1 XOR 1 = 0
+Sexto par: 1 XOR 0 = 1
+Septimo par: 0 XOR 0 = 0
+
+Resultado final:
+10111100₂
+|
+v
+11100010 (G)
+```
+
+2. `0101`
+
+```
+Número 0101₂
+
+Proceso:
+
+0 + 1 + 0 + 1
+|  \   \   \
+0   1   1   1
+
+Primer par: 0 XOR 1 = 1
+Segundo par: 1 XOR 0 = 1
+Tercer par: 0 XOR 1 = 1
+
+Resultado final:
+0101₂
+|
+v
+0111 (G)
+```
+
+3. `0110`
+
+```
+Número 0110₂
+
+Proceso:
+
+0 + 1 + 1 + 0
+|  \   \   \
+0   1   0   1
+
+Primer par: 0 XOR 1 = 1
+Segundo par: 1 XOR 1 = 0
+Tercer par: 0 XOR 1 = 1
+
+Resultado final:
+0110₂
+|
+v
+0101 (G)
+```
+
+4. `1001`
+
+```
+Número 1001₂
+
+Proceso:
+
+1  0  0  1
+|+/|+/|+/|
+1  1  1  0
+
+Primer par: 1 XOR 0 = 1
+Segundo par: 1 XOR 0 = 1
+Tercer par: 1 XOR 1 = 0
+
+Resultado final:
+1001 (G)
+|
+v
+1110₂
+```
+
+5. `1110`
+
+```
+Número 1110₂
+
+Proceso:
+
+1  1  1  0
+|+/|+/|+/|
+1  0  1  0
+
+Primer par: 1 XOR 1 = 0
+Segundo par: 0 XOR 1 = 1
+Tercer par: 1 XOR 0 = 1
+
+Resultado final:
+1001 (G)
+|
+v
+1011₂
+```
+
+
+> Respuesta:
+
+| Bin | 10111100 | 0101000 | 1110110 | ……………. | ……………. |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Gray | ……………. | ……………. | ……………. | 10010000 | 1111000000 |
+---
 
 | Gray | 10111100001 | 0101000111 | 111011011 | ……………. | ……………. |
 |:---:|:---:|:---:|:---:|:---:|:---:|
