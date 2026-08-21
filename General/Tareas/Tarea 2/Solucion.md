@@ -191,105 +191,267 @@ v
 11100010 (G)
 ```
 
-2. `0101`
+2. `0101000`
 
 ```
-Número 0101₂
+Número 0101000₂
 
 Proceso:
 
-0 + 1 + 0 + 1
-|  \   \   \
-0   1   1   1
+0 + 1 + 0 + 1 + 0 + 0 + 0
+|  \   \   \   \   \   \ 
+0   1   1   1   1   0   0 
 
 Primer par: 0 XOR 1 = 1
 Segundo par: 1 XOR 0 = 1
 Tercer par: 0 XOR 1 = 1
+Cuarto par: 1 XOR 0 = 1
+Quinto par: 0 XOR 0 = 0
+Sexto par: 0 XOR 0 = 0
 
 Resultado final:
-0101₂
+0101000₂
 |
 v
-0111 (G)
+0111100 (G)
 ```
 
-3. `0110`
+3. `1110110`
 
 ```
-Número 0110₂
+Número 1110110₂
 
 Proceso:
 
-0 + 1 + 1 + 0
-|  \   \   \
-0   1   0   1
+1 + 1 + 1 + 0 + 1 + 1 + 0
+|  \   \   \   \   \   \ 
+1   0   0   1   1   0   1 
 
-Primer par: 0 XOR 1 = 1
+Primer par: 1 XOR 1 = 0
 Segundo par: 1 XOR 1 = 0
-Tercer par: 0 XOR 1 = 1
+Tercer par: 1 XOR 0 = 1
+Cuarto par: 0 XOR 1 = 1
+Quinto par: 1 XOR 1 = 0
+Sexto par: 1 XOR 0 = 1
 
 Resultado final:
-0110₂
+1110110₂
 |
 v
-0101 (G)
+1001101 (G)
 ```
 
-4. `1001`
+4. `10010000`
 
 ```
-Número 1001₂
+Número 10010000₂
 
 Proceso:
 
-1  0  0  1
-|+/|+/|+/|
-1  1  1  0
+1  0  0  1  0  0  0  0
+|+/|+/|+/|+/|+/|+/|+/|
+1  1  1  0  0  0  0  0
 
 Primer par: 1 XOR 0 = 1
 Segundo par: 1 XOR 0 = 1
-Tercer par: 1 XOR 1 = 0
+Tercer par: 1 XOR 0 = 0
+Cuarto par: 0 XOR 0 = 0
+Quinto par: 0 XOR 0 = 0
+Sexto par: 0 XOR 0 = 0
+Septimo par: 0 XOR 0 = 0
 
 Resultado final:
-1001 (G)
+10010000 (G)
 |
 v
-1110₂
+11100000₂
 ```
 
-5. `1110`
+5. `1111000000`
 
 ```
-Número 1110₂
+Número 1111000000₂
 
 Proceso:
 
-1  1  1  0
-|+/|+/|+/|
-1  0  1  0
+1  1  1  1  0  0  0  0  0  0
+|+/|+/|+/|+/|+/|+/|+/|+/|+/|
+1  0  1  0  0  0  0  0  0  0
 
 Primer par: 1 XOR 1 = 0
 Segundo par: 0 XOR 1 = 1
-Tercer par: 1 XOR 0 = 1
+Tercer par: 1 XOR 1 = 0
+Cuarto par: 0 XOR 0 = 0
+Quinto par: 0 XOR 0 = 0
+Sexto par: 0 XOR 0 = 0
+Septimo par: 0 XOR 0 = 0
+Octavo par: 0 XOR 0 = 0
+Noveno par: 0 XOR 0 = 0
 
 Resultado final:
-1001 (G)
+1111000000 (G)
 |
 v
-1011₂
+1010000000₂
 ```
 
 
 > Respuesta:
 
-| Bin | 10111100 | 0101000 | 1110110 | ……………. | ……………. |
+| Bin | 10111100 | 0101000 | 1110110 | `11100000₂` | `1010000000₂` |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| Gray | ……………. | ……………. | ……………. | 10010000 | 1111000000 |
+| Gray | `11100010` | `0111100` | `1001101` | 10010000 | 1111000000 |
 ---
 
 | Gray | 10111100001 | 0101000111 | 111011011 | ……………. | ……………. |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Bin | ……………. | ……………. | ……………. | 1000110000 | 0111000000 |
+
+1. `10111100001`
+
+```
+Número 1111000000₂
+
+Proceso:
+
+1  0  1  1  1  1  0  0  0  0  1
+|+/|+/|+/|+/|+/|+/|+/|+/|+/|+/|
+1  1  0  1  0  1  1  1  1  1  0
+
+Primer par: 1 XOR 0 = 1
+Segundo par: 1 XOR 1 = 0
+Tercer par: 0 XOR 1 = 1
+Cuarto par: 1 XOR 1 = 0
+Quinto par: 0 XOR 1 = 1
+Sexto par: 1 XOR 0 = 1
+Septimo par: 1 XOR 0 = 1
+Octavo par: 1 XOR 0 = 1
+Noveno par: 1 XOR 0 = 1
+Decimo par: 1 XOR 1 = 0
+
+Resultado final:
+10111100001 (G)
+|
+v
+11010111110₂
+```
+
+2. `0101000111`
+
+```
+Número 0101000111₂
+
+Proceso:
+
+0  1  0  1  0  0  0  1  1  1
+|+/|+/|+/|+/|+/|+/|+/|+/|+/|
+0  1  1  0  0  0  0  1  0  1
+
+Primer par: 0 XOR 1 = 1
+Segundo par: 1 XOR 0 = 1
+Tercer par: 1 XOR 1 = 0
+Cuarto par: 0 XOR 0 = 0
+Quinto par: 0 XOR 0 = 0
+Sexto par: 0 XOR 0 = 0
+Septimo par: 0 XOR 1 = 1
+Octavo par: 1 XOR 1 = 0
+Noveno par: 0 XOR 1 = 1
+
+Resultado final:
+0101000111 (G)
+|
+v
+0110000101₂
+```
+
+3. `111011011`
+
+```
+Número 0101000111₂
+
+Proceso:
+
+1  1  1  0  1  1  0  1  1
+|+/|+/|+/|+/|+/|+/|+/|+/|
+1  0  1  1  0  1  1  0  1
+
+Primer par: 1 XOR 1 = 0
+Segundo par: 0 XOR 1 = 1
+Tercer par: 1 XOR 0 = 1
+Cuarto par: 1 XOR 1 = 0
+Quinto par: 0 XOR 1 = 1
+Sexto par: 1 XOR 0 = 1
+Septimo par: 1 XOR 1 = 0
+Octavo par: 0 XOR 1 = 1
+
+Resultado final:
+111011011 (G)
+|
+v
+101101101₂
+```
+
+4. `1000110000`
+
+```
+Número 1000110000₂
+
+Proceso:
+
+1 + 0 + 0 + 0 + 1 + 1 + 0 + 0 + 0 + 0
+|  \   \   \   \   \   \   \   \   \ 
+1   1   0   0   1   0   1   0   0   0
+
+Primer par: 1 XOR 0 = 1
+Segundo par: 0 XOR 0 = 0
+Tercer par: 0 XOR 0 = 0
+Cuarto par: 0 XOR 1 = 1
+Quinto par: 1 XOR 1 = 0
+Sexto par: 1 XOR 0 = 1
+Septimo par: 0 XOR 0 = 0
+Octavo par: 0 XOR 0 = 0
+Noveno par: 0 XOR 0 = 0
+
+Resultado final:
+1000110000₂
+|
+v
+1100101000 (G)
+```
+
+5. `0111000000`
+
+```
+Número 0111000000₂
+
+Proceso:
+
+0 + 1 + 1 + 1 + 0 + 0 + 0 + 0 + 0 + 0
+|  \   \   \   \   \   \   \   \   \ 
+0   1   0   0   1   0   0   0   0   0
+
+Primer par: 0 XOR 1 = 1
+Segundo par: 1 XOR 1 = 0
+Tercer par: 1 XOR 1 = 0
+Cuarto par: 1 XOR 0 = 1
+Quinto par: 0 XOR 0 = 0
+Sexto par: 0 XOR 0 = 0
+Septimo par: 0 XOR 0 = 0
+Octavo par: 0 XOR 0 = 0
+Noveno par: 0 XOR 0 = 0
+
+Resultado final:
+0111000000₂
+|
+v
+0100100000 (G)
+```
+
+> Respuesta:
+
+| Gray | 10111100001 | 0101000111 | 111011011 | `1100101000` | `0100100000` |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Bin | `11010111110₂` | `0110000101₂` | `101101101₂` | 1000110000 | 0111000000 |
 
 * d- Suma de BCD:
 
