@@ -588,42 +588,144 @@ Resultado->  0001 0100 0010 0000  -> 1420
 
 * a) `1111 - 11)₂` 
 
+1. Unificar bases: 1111₂ - 0011₂
+2. Complemento a 2 de 0011₂: **1101₂**
+3. Se suma;
+```
+  1111
++ 1101
+------
+[1]1100     // Con Acarreo
+```
+4. Se elimina el acarreo final, completando el resultado: 1100₂
 
+### **Comprobación:**
+* Decimal: $15 - 3 = 12_{10}$
+* Binario: $12_{10} = \mathbf{1100_2}$
+
+---
 
 * b) `111 - 00001)₂` 
 
+1. Unificar bases: 00111₂ - 00001₂
+2. Complemento a 2 de 00001₂: **11111₂**
+3. Se suma;
+```
+ 00111
++11111
+------
+[1]00110     // Con Acarreo
+```
+4. Se elimina el acarreo final, completando el resultado: 110₂
 
+### **Comprobación:**
+* Decimal: $7 - 1 = 6_{10}$
+* Binario: $6_{10} = \mathbf{110_2}$
+
+---
 
 * c) `100000 - 110)₂` 
 
+1. Unificar bases: 100000₂ - 000110₂
+2. Complemento a 2 de 000110₂: **111010₂**
+3. Se suma;
+```
+  100000
++ 111010
+--------
+[1]011010     // Con Acarreo
+```
+4. Se elimina el acarreo final, completando el resultado: 11010₂
 
+### **Comprobación:**
+* Decimal: $32 - 6 = 26_{10}$
+* Binario: $26_{10} = \mathbf{11010_2}$
+
+---
 
 * d) `0001 - 10)₂` 
 
+1. Unificar bases: 0001₂ - 0010₂
+2. Complemento a 2 de 0010₂: **1110₂**
+3. Se suma;
+```
+  0001
++ 1110
+------
+  1111     
+```
+4. Como no hubo acarreo. Se vuelve a complementar: complemento a 2 de 1111₂ = 0000₂ + 1₂ = 0001₂ Resultado final: -0001₂
 
+### **Comprobación:**
+* Decimal: $1 - 2 = -1_{10}$
+* Binario: $-1_{10} = \mathbf{-0001_2}$
+
+---
 
 * e) `0101010 - 111111111)₂` 
 
+1. Unificar bases: 000101010₂ - 111111111₂
+2. Complemento a 2 de 111111111₂: **000000001₂**
+3. Se suma;
+```
+  000101010
++ 000000001
+------
+  000101011
+```
+4. Como no hubo acarreo. Se vuelve a complementar: complemento a 2 de 000101011₂ = 111010100₂ + 1₂ = 111010101₂ Resultado final: -111010101₂
 
+### **Comprobación:**
+* Decimal: $42 - 511 = -469_{10}$
+* Binario: $-469_{10} = \mathbf{-111010101_2}$
+
+---
 
 * f) `00000011 - 1111000)₂` 
 
+1. Unificar bases: 00000011₂ - 01111000₂
+2. Complemento a 2 de 01111000₂: **10001000₂**
+3. Se suma;
+```
+  00000011
++ 10001000
+-----------
+  10001011     
+```
+4. Como no hubo acarreo. Se vuelve a complementar: complemento a 2 de 10001011₂ = 01110100₂ + 1₂ = 01110101₂ Resultado final: -01110101₂
 
+### **Comprobación:**
+* Decimal: $3 - 120 = -117_{10}$
+* Binario: $-117_{10} = \mathbf{01110101_2}$
+
+---
 
 * g) `111111 - 10101)₂` 
 
+1. Unificar bases: 111111₂ - 010101₂
+2. Complemento a 2 de 010101₂: **101011₂**
+3. Se suma;
+```
+  111111
++ 101011
+--------
+[1]101010      // Con Acarreo
+```
+4. Se elimina el acarreo final, completando el resultado: 101010₂
 
-
+### **Comprobación:**
+* Decimal: $63 - 21 = 42_{10}$
+* Binario: $42_{10} = \mathbf{101010_2}$
 
 |Enunciado|Resultados|
 |:--:|:--:|
-|1111 - 11)₂           |``
-|111 - 00001)₂         |``
-|100000 - 110)₂        |``
-|0001 - 10)₂           |``
-|0101010 - 111111111)₂ |``
-|00000011 - 1111000)₂  |``
-|111111 - 10101)₂      |``
+|1111 - 11)₂           |`1100`
+|111 - 00001)₂         |`110`
+|100000 - 110)₂        |`11010`
+|0001 - 10)₂           |`-0001`
+|0101010 - 111111111)₂ |`-111010101`
+|00000011 - 1111000)₂  |`-01110101`
+|111111 - 10101)₂      |`101010`
 
 ---
 
