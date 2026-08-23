@@ -11,6 +11,7 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 - [Semana 03 { Complemento y Códigos Binarios }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana03/Complemento_CodigosBinarios.md) — Complemento a 1, complemento a 2 y códigos binarios.
 - [Semana 04 { ASCII y ÁlgebraBool }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana04/ASCII-AlgBool.md) — Código ASCII y Álgebra Booleana (con DigitalWork).
 - [Semana 05 { Diseño Lógico }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana05/Dise%C3%B1o%20logico.md) — Diseño Lógico y Mapas de Karnaugh.
+- [Semana 06 { Pendiente }]() —
 
 
 ---
@@ -36,8 +37,8 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 ## ❓ Quiz
 > Enunciados de quices del curso.
 
-- [Quiz 1]() - Gray - BCD - Binario 
-- [Quiz 2]() - 
+- [Quiz 1](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Quiz/Quiz1.md) - Gray - BCD - Binario 
+- [Quiz 2](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Quiz/Quiz2.md) - 
 
 ---
 
