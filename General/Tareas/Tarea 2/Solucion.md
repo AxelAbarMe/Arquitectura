@@ -124,11 +124,17 @@ Primer par: 1 XOR 0 = 1
 Segundo par: 1 XOR 0 = 1
 Tercer par: 1 XOR 1 = 0
 
+Al 1110 > 1001 se debe de ajustar a formato BCF
+1110 = 14
+
+1 -> 0001
+4 -> 0100
+
 Resultado final:
 1001 (G)
 |
 v
-1110₂
+0001 0100₂
 ```
 
 5. `1110`
@@ -140,23 +146,29 @@ Proceso:
 
 1  1  1  0
 |+/|+/|+/|
-1  0  1  0
+1  0  1  1
 
 Primer par: 1 XOR 1 = 0
 Segundo par: 0 XOR 1 = 1
 Tercer par: 1 XOR 0 = 1
 
+Al 1011 > 1001 se debe de ajustar a formato BCF
+1010 = 11
+
+1 -> 0001
+1 -> 0001
+
 Resultado final:
 1001 (G)
 |
 v
-1011₂
+0001 0001₂
 ```
 
 
 > Respuesta:
 
-| BCD | 1000 | 0101 | 0110 | `1110` | `1011` |
+| BCD | 1000 | 0101 | 0110 | `0001 0100` | `0001 0001` |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Gray | `1100` | `0111` | `0101` | 1001 | 1110 |
 ---
