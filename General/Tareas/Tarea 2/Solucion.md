@@ -124,7 +124,7 @@ Primer par: 1 XOR 0 = 1
 Segundo par: 1 XOR 0 = 1
 Tercer par: 1 XOR 1 = 0
 
-Al 1110 > 1001 se debe de ajustar a formato BCF
+Al 1110 > 1001 se debe de ajustar a formato BCD
 1110 = 14
 
 1 -> 0001
@@ -152,7 +152,7 @@ Primer par: 1 XOR 1 = 0
 Segundo par: 0 XOR 1 = 1
 Tercer par: 1 XOR 0 = 1
 
-Al 1011 > 1001 se debe de ajustar a formato BCF
+Al 1011 > 1001 se debe de ajustar a formato BCD
 1010 = 11
 
 1 -> 0001
