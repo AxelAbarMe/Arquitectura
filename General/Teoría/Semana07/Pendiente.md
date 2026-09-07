@@ -90,6 +90,25 @@ S = xy\`+ x\`y => S = x XOR y
 
 > Se transforma el resultado en una compuerta XOR
 
+Mapa k 2 variables de C
+
+| x\y |  | y |
+|:--:|:--:|:--:|
+|   |  0 | 0
+| x |  0 | 1
+
+C = xy
+
+```
+x ----|---|
+      |   ---XOR----S
+y -|--|---|
+   |  |
+   |  |---|
+   |      ---AND----C
+   |------|
+```
+
 ## Full Adder
 
 * xyz son entradas
