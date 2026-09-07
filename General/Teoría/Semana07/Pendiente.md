@@ -65,3 +65,46 @@ D ----+---[--NAND ]/                 \---[--NAND ]------------------------------
 > Circuito mas sencillo es el sumador
 
 ## Half Adder
+
+* xy son entradas
+* S es Salida
+* C es Acarreo
+
+x|y|S|C
+|:--:|:--:|:--:|:--:|
+0|0|0|0
+0|1|1|0
+1|0|1|0
+1|1|0|1
+
+Se transforma para conocer las compuertas con un mapa K de 2 variables
+
+Mapa k 2 variables de S
+
+| x\y |  | y |
+|:--:|:--:|:--:|
+|   |  0 | 1
+| x |  1 | 0
+
+S = xy\`+ x\`y => S = x XOR y
+
+> Se transforma el resultado en una compuerta XOR
+
+## Full Adder
+
+* xyz son entradas
+* S es Salida
+* C es Acarreo
+
+x|y|z|S|C
+|:--:|:--:|:--:|:--:|:---:|
+0|0|0|0|0
+0|0|1|1|0
+0|1|0|1|0
+0|1|1|0|1
+1|0|0|1|0
+1|0|1|0|1
+1|1|0|0|1
+1|1|1|1|1
+
+Se transforma para conocer las compuertas con un mapa K de 3 variables
