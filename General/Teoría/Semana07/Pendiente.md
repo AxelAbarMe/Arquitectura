@@ -1,18 +1,20 @@
 # Compuertas NAND
 
 **Ley de Morgan**
-> * (x * y)\` = x\`+ y\`
-> * (x + y)\` = x\` * y\`
+> * (x · y)' = x' + y'
+> * (x + y)' = x' · y'
 
-Resistencia con poco afecta el voltaje, dos inversores no afecta el resultado del voltaje y genera poco letargo.
+> **Nota:** en un circuito físico real, agregar una resistencia pequeña apenas afecta el voltaje de la señal; de manera similar, colocar dos inversores (NOT) en serie no altera el resultado lógico final, ya que se cancelan entre sí, y solo introducen un pequeño retraso de propagación (letargo) en la señal.
 
 ## Conversión de compuertas AND, OR y NOT en compuertas NAND
 
-* Compuertas OR se les agrega en las entradas compuertas NOT dobles para transformarla, se agarra una NOT de cada entrada junto con el OR para volverla NAND, el sobrante NOT se deja y se modifica con las reglas del NOT.
-* Compuertas NOT se transforman en NAND uniendo ambas entradas de una misma variable para transformarlo en NAND.
-* Compuertas AND tiene 2 formas, se aprovecha de los NOT abandonados del OR para volverse AND o agrega en la salida 2 NOT y une 1 con AND y el otro sobrante NOT se deja y se modifica con las reglas del NOT.
+* **Compuertas OR:** se agregan compuertas NOT dobles en cada entrada para transformarla; se toma una NOT de cada entrada junto con la OR para convertirla en NAND. La NOT sobrante de cada par se conserva y se ajusta aplicando las reglas del NOT (unir sus entradas en una NAND).
+* **Compuertas NOT:** se transforman en NAND uniendo ambas entradas de la NAND con la misma variable (equivalente a invertirla).
+* **Compuertas AND:** existen 2 formas de obtenerlas:
+  1. Aprovechar los NOT sobrantes que quedaron de una conversión OR cercana para completar la AND.
+  2. Agregar 2 NOT en la salida: una se une con la AND (formando la NAND) y la otra NOT sobrante se ajusta con las reglas del NOT.
 
-> Revisar que se usa en las entradas para evitar agregar compuertas NAND innecesarias, buscar opción óptima de menos compuertas que cumpla la función.
+> **Regla general de optimización:** siempre revisar qué compuertas NOT ya existen disponibles en las entradas antes de agregar nuevas, para evitar compuertas NAND innecesarias y así llegar a la opción óptima (menor cantidad de compuertas) que cumpla la función.
 
 ## Ejemplos:
 
@@ -60,15 +62,15 @@ D ----+---[--NAND ]/                 \---[--NAND ]------------------------------
 
 # Circuito combinacional
 
-> Salida es combinación de las entradas, no tiene memoria (Ósea puede cambiar sin depender del resultado anterior)
+> La salida es una combinación de las entradas; no tiene memoria (es decir, puede cambiar sin depender del resultado anterior).
 >
-> Circuito mas sencillo es el sumador
+> El circuito combinacional más sencillo de estudiar es el sumador.
 
 ## Half Adder
 
-* xy son entradas
-* S es Salida
-* C es Acarreo
+* x, y son entradas
+* S es Salida (Suma)
+* C es Acarreo (Carry)
 
 x|y|S|C
 |:--:|:--:|:--:|:--:|
@@ -77,25 +79,25 @@ x|y|S|C
 1|0|1|0
 1|1|0|1
 
-Se transforma para conocer las compuertas con un mapa K de 2 variables
+Se transforma para conocer las compuertas con un mapa K de 2 variables.
 
-Mapa k 2 variables de S
+**Mapa K de 2 variables de S**
 
-| x\y |  | y |
+| x\y |  0 | 1 |
 |:--:|:--:|:--:|
-|   |  0 | 1
-| x |  1 | 0
+| 0 |  0 | 1
+| 1 |  1 | 0
 
-S = xy\`+ x\`y => S = x XOR y
+S = xy' + x'y => S = x XOR y
 
-> Se transforma el resultado en una compuerta XOR
+> El resultado se transforma en una compuerta XOR (patrón "tablero de ajedrez" en el mapa K, típico de la operación XOR, sin posibilidad de agrupar términos).
 
-Mapa k 2 variables de C
+**Mapa K de 2 variables de C**
 
-| x\y |  | y |
+| x\y |  0 | 1 |
 |:--:|:--:|:--:|
-|   |  0 | 0
-| x |  0 | 1
+| 0 |  0 | 0
+| 1 |  0 | 1
 
 C = xy
 
@@ -109,11 +111,13 @@ y -|--|---|
    |------|
 ```
 
+---
+
 ## Full Adder
 
-* xyz son entradas
-* S es Salida
-* C es Acarreo
+* x, y, z son entradas
+* S es Salida (Suma)
+* C es Acarreo (Carry)
 
 x|y|z|S|C
 |:--:|:--:|:--:|:--:|:---:|
@@ -126,4 +130,44 @@ x|y|z|S|C
 1|1|0|0|1
 1|1|1|1|1
 
-Se transforma para conocer las compuertas con un mapa K de 3 variables
+Se transforma para conocer las compuertas con un mapa K de 3 variables.
+
+**Mapa K de 3 variables de S**
+
+| x\yz |  00 | 01 | 11 | 10 |
+|:--:|:--:|:--:|:--:|:--:|
+| 0 |  0 | 1 | 0 | 1
+| 1 |  1 | 0 | 1 | 0
+
+S = x'y'z + x'yz' + xy'z' + xyz => S = x XOR y XOR z
+
+> El resultado se transforma en dos compuertas XOR encadenadas (patrón "tablero de ajedrez" en el mapa K, sin posibilidad de agrupar términos, igual que en el Half Adder).
+
+**Mapa K de 3 variables de C**
+
+| x\yz |  00 | 01 | 11 | 10 |
+|:--:|:--:|:--:|:--:|:--:|
+| 0 |  0 | 0 | 1 | 0
+| 1 |  0 | 1 | 1 | 1
+
+> Aquí se ignora la agrupación óptima del mapa K (que daría `xy + yz + xz`) y en su lugar se toma la expresión sin combinar los términos que comparten x, para poder reutilizar el XOR ya calculado en S:
+
+C = xy + xy'z + x'yz
+
+C = xy + z(xy' + x'y)
+
+C = xy + z(x XOR y)
+
+```
+x ----+---[--XOR ]-----+-------------------[--XOR ]---> S
+      |                 \                     /
+y ----+                  \___[ S1 ]__________/
+      |                       |
+      +---[--AND ]-----\      |
+      |      (C1)        \    |
+      |                    \  |
+z ----+--------------------+--+---[--AND ]-----\
+      |                                 (C2)     \
+      |                                            [--OR ]---> C
+      +--------------------------------------------/
+```
