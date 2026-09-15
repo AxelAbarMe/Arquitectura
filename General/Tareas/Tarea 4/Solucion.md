@@ -4,7 +4,7 @@
 Implemente -de manera óptima y mínima- el circuito lógico de la F. (Sólo con compuertas de NAND)
 
 - d(D,C,B,A) = Σ(4,5,10,11,12)
-- F(D,C,B,A) = Σ(0,7,8,13,4)
+- F(D,C,B,A) = Σ(0,7,8,13,14)
 
 ## 2. Obtenga / Simplifique e implemente la función
 
