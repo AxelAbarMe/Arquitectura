@@ -82,13 +82,13 @@ B1'--+----|
 
 | Mini Término | xyz | Bin |
 |:--:|:--:|:--:|
-| m0 | x`y`z`| 000|
-| m1 | x`y`z | 001 |
-| m2 | x`yz` | 010 |
-| m3 | x`yz | 011 |
-| m4 | xy`z` | 100 |
-| m5 | xy`z | 101 |
-| m6 | xyz` | 110 |
+| m0 | x\`y\`z\`| 000|
+| m1 | x\`y\`z | 001 |
+| m2 | x\`yz\` | 010 |
+| m3 | x\`yz | 011 |
+| m4 | xy\`z\` | 100 |
+| m5 | xy\`z | 101 |
+| m6 | xyz\` | 110 |
 | m7 | xyz | 111 |
 
 > Cada mini término representa **una única fila** de la tabla de verdad; por eso son la base de los decodificadores: cada salida del decodificador corresponde exactamente a un mini término.
