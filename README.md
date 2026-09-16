@@ -13,7 +13,8 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 - [Semana 05 { Diseño Lógico }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana05/Dise%C3%B1o%20logico.md) — Diseño Lógico y Mapas de Karnaugh.
 - [Semana 06 { Mapa K4 }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana06/MapaK4.md) — Mapa K de 4 variables y Mapas utilizando "Don't Care"
 - [Semana 07 { Compuertas }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana07/CompuertasNAND.md) — Compuertas NAND, half y full adder
-- [Semana 08 {  }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana08/Pendiente.md) — 
+- [Semana 08 { Comparadores }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana08/Comparadores.md) — Comparadores, codificadores y multiplexores
+- [Semana 09 {  }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana09/Pendiente.md) — 
 
 ---
 
