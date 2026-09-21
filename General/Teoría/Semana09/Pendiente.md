@@ -92,6 +92,22 @@ Tiene control debido a que tiene 2 entradas, solo por eso tiene control.
 |0|Q(v) Sin cambio
 |1|Q`(v) Complementar
 
+#### Flip Flop JK
+
+Según las tablas de caracteristica, el dibujo de cada flip flop en ASCII con el valor según se entregue VCC o GND en JK y la salida según CLK mande señales
+
+* JK 00
+* JK 01
+* JK 10
+* JK 11
+
+Aplicaciones más comunes para flip flop puede ser un contador
+
+## Ejemplo Contador con flip flop D
+
+Contador que cuenta 0->1->2->3 y se reinicia, mayor 11)2, 2bit al usar 2 Flip Flop D ambos conectados al mismo reloj al ser contador sincronico.
+
+> Siempre LSB es el conectado al reloj global al estar más cerca
 
 
 
