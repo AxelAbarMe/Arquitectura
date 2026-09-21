@@ -61,9 +61,11 @@ Durante el tiempo que no recibe pulsos del reloj, el elemento de memoria al ser 
 
 Tiene control debido a que tiene 2 entradas, solo por eso tiene control.
 
-<img width="310" height="243" alt="image" src="https://github.com/user-attachments/assets/5515d233-7e88-4358-aee3-28299b12047e" />
+<img width="400" height="248" alt="image" src="https://github.com/user-attachments/assets/12de649c-50de-4dba-bc76-b5c97b8d8c4d" />
 
-Tabla de caracteristica
+<img width="310" height="248" alt="image" src="https://github.com/user-attachments/assets/5515d233-7e88-4358-aee3-28299b12047e" />
+
+### Tabla de caracteristica
 
 > Usar v en vez de t
 
