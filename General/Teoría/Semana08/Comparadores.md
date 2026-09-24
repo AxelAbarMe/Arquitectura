@@ -1,79 +1,84 @@
-# Diseño de Comparadores (Circuitos Combinatorios)
+# =========================================
+# DISEÑO DE COMPARADORES (Circuitos Combinatorios)
+# =========================================
 
 > Necesita una F matemática
 
-```C++
+```
     { A >= B; F=1
 F = {
-    { A < B; F=0
+    { A < B;  F=0
 ```
 
-Existen 2 formas más para hacer el circuito, pero primeramente su implementación con compuertas:
+Existen 2 formas más para hacer el circuito (Decodificador y Multiplexor, ver más abajo), pero primeramente su implementación con compuertas:
 
-| Pos m | A2 | A1 | B2 | B1 | F
+| Pos m | A2 | A1 | B2 | B1 | F |
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|0|0|0|0|0|1
-|1|0|0|0|1|0
-|2|0|0|1|0|0
-|3|0|0|1|1|0
-|4|0|1|0|0|1
-|5|0|1|0|1|1
-|6|0|1|1|0|0
-|7|0|1|1|1|0
-|8|1|0|0|0|1
-|9|1|0|0|1|1
-|10|1|0|1|0|1
-|11|1|0|1|1|0
-|12|1|1|0|0|1
-|13|1|1|0|1|1
-|14|1|1|1|0|1
-|15|1|1|1|1|1
+|0|0|0|0|0|1|
+|1|0|0|0|1|0|
+|2|0|0|1|0|0|
+|3|0|0|1|1|0|
+|4|0|1|0|0|1|
+|5|0|1|0|1|1|
+|6|0|1|1|0|0|
+|7|0|1|1|1|0|
+|8|1|0|0|0|1|
+|9|1|0|0|1|1|
+|10|1|0|1|0|1|
+|11|1|0|1|1|0|
+|12|1|1|0|0|1|
+|13|1|1|0|1|1|
+|14|1|1|1|0|1|
+|15|1|1|1|1|1|
 
 * `Σm(0,4,5,8,9,10,12,13,14,15)`
 
 ## Mapa de Karnaugh del comparador
 
-| A2A1 \ B2B1 | B2'B1' | B2'B1 | B2B1 | B2B1' |
+| A2A1 \ B2B1 | B2'B1' (00) | B2'B1 (01) | B2B1 (11) | B2B1' (10) |
 |:--:|:--:|:--:|:--:|:--:|
-| | **00** | **01** | **11** | **10** |
 | **A2'A1' (00)** | 1 | 0 | 0 | 0 |
 | **A2'A1 (01)** | 1 | 1 | 0 | 0 |
 | **A2A1 (11)** | 1 | 1 | 1 | 1 |
 | **A2A1' (10)** | 1 | 1 | 0 | 1 |
 
 **Agrupaciones:**
-* Fila `A2A1=11` completa (12,13,15,14) → **A2A1**
-* Columna `B2B1=00` completa (0,4,12,8) → **B2'B1'**
-* Bloque `{8,9,12,13}` (A2=1, B2=0, A1 y B1 libres) → **A2B2'**
-* Par `{5,13}` (A1=1, B2=0, B1=1, A2 libre) → **A1B2'B1**
-* Par `{10,14}` (A2=1, B2=1, B1=0, A1 libre) → **A2B2B1'**
+* Fila `A2A1=11` completa (12,13,15,14) -> **A2A1**
+* Columna `B2B1=00` completa (0,4,12,8) -> **B2'B1'**
+* Bloque `{8,9,12,13}` (A2=1, B2=0, A1 y B1 libres) -> **A2B2'**
+* Par `{5,13}` (A1=1, B2=0, B1=1, A2 libre) -> **A1B2'B1**
+* Par `{10,14}` (A2=1, B2=1, B1=0, A1 libre) -> **A2B2B1'**
 
 **F(A2,A1,B2,B1) = A2A1 + B2'B1' + A2B2' + A1B2'B1 + A2B2B1'**
 
-## Diagrama de circuito del comparador
+## Diagrama de circuito del comparador (con compuertas)
 
 ```
-A2---+----|
-     |    --AND(A2A1)-------|
-A1---+----|                 |
-                             |
-B2'--+----|                 |
-     |    --AND(B2'B1')-----|
-B1'--+----|                 |
-                             |
-A2---+----|                 |
-     |    --AND(A2B2')------|----OR----> F
-B2'--+----|                 |
-                             |
-A1---+----|                 |
-     |    --AND(A1B1B2')----|
-B1---+----|                 |
-B2'--+----|                 |
-                             |
-A2---+----|                 |
-     |    --AND(A2B2B1')----|
-B2---+----|
-B1'--+----|
+              ┌─────┐
+   A2 ────────┤     │
+              │ AND ├──── A2·A1 ─────────┐
+   A1 ────────┤     │                    │
+              └─────┘                    │
+              ┌─────┐                    │
+  B2' ────────┤     │                    │
+              │ AND ├──── B2'·B1' ───────┤
+  B1' ────────┤     │                    │
+              └─────┘                    │
+              ┌─────┐                    │
+   A2 ────────┤     │                    │      ┌────┐
+              │ AND ├──── A2·B2' ────────┼──────┤    │
+  B2' ────────┤     │                    │      │ OR ├──── F
+              └─────┘                    │      │    │
+              ┌─────┐                    │      └────┘
+   A1 ────────┤     │                    │
+   B1 ────────┤ AND ├──── A1·B1·B2' ─────┤
+  B2' ────────┤     │                    │
+              └─────┘                    │
+              ┌─────┐                    │
+   A2 ────────┤     │                    │
+   B2 ────────┤ AND ├──── A2·B2·B1' ─────┘
+  B1' ────────┤     │
+              └─────┘
 ```
 
 ---
@@ -82,13 +87,13 @@ B1'--+----|
 
 | Mini Término | xyz | Bin |
 |:--:|:--:|:--:|
-| m0 | x\`y\`z\`| 000|
-| m1 | x\`y\`z | 001 |
-| m2 | x\`yz\` | 010 |
-| m3 | x\`yz | 011 |
-| m4 | xy\`z\` | 100 |
-| m5 | xy\`z | 101 |
-| m6 | xyz\` | 110 |
+| m0 | x'y'z' | 000|
+| m1 | x'y'z | 001 |
+| m2 | x'yz' | 010 |
+| m3 | x'yz | 011 |
+| m4 | xy'z' | 100 |
+| m5 | xy'z | 101 |
+| m6 | xyz' | 110 |
 | m7 | xyz | 111 |
 
 > Cada mini término representa **una única fila** de la tabla de verdad; por eso son la base de los decodificadores: cada salida del decodificador corresponde exactamente a un mini término.
@@ -108,13 +113,13 @@ B1'--+----|
 ### Decodificador de 2 variables
 
 ```
-          +----------------+
-     A ---|0              0|---> m0 = A'B'
-     B ---|1              1|---> m1 = A'B
-          |                2|---> m2 = AB'
-          |                3|---> m3 = AB
-          +----------------+
-             Decodificador 2 a 4
+          ┌────────────────┐
+     A ───┤0              0├───> m0 = A'B'
+     B ───┤1              1├───> m1 = A'B
+          │                2├───> m2 = AB'
+          │                3├───> m3 = AB
+          └────────────────┘
+              Decodificador 2 a 4
 ```
 
 | A | B | Salida activa |
@@ -127,17 +132,17 @@ B1'--+----|
 ### Decodificador de 3 variables
 
 ```
-          +----------------+
-     x ---|0              0|---> m0 = x'y'z'
-     y ---|1              1|---> m1 = x'y'z
-     z ---|2              2|---> m2 = x'yz'
-          |                3|---> m3 = x'yz
-          |                4|---> m4 = xy'z'
-          |                5|---> m5 = xy'z
-          |                6|---> m6 = xyz'
-          |                7|---> m7 = xyz
-          +----------------+
-             Decodificador 3 a 8
+          ┌────────────────┐
+     x ───┤0              0├───> m0 = x'y'z'
+     y ───┤1              1├───> m1 = x'y'z
+     z ───┤2              2├───> m2 = x'yz'
+          │                3├───> m3 = x'yz
+          │                4├───> m4 = xy'z'
+          │                5├───> m5 = xy'z
+          │                6├───> m6 = xyz'
+          │                7├───> m7 = xyz
+          └────────────────┘
+              Decodificador 3 a 8
 ```
 
 | x | y | z | Salida activa |
@@ -154,14 +159,14 @@ B1'--+----|
 ### Decodificador de 4 variables
 
 ```
-          +----------------+
-     w ---|0              0|---> m0
-     x ---|1              1|---> m1
-     y ---|2               ...
-     z ---|3              14|---> m14
-          |               15|---> m15
-          +----------------+
-             Decodificador 4 a 16
+          ┌────────────────┐
+     w ───┤0              0├───> m0
+     x ───┤1              1├───> m1
+     y ───┤2               │      ...
+     z ───┤3              14├───> m14
+          │               15├───> m15
+          └────────────────┘
+              Decodificador 4 a 16
 ```
 
 > Sigue la misma lógica: cada una de las **16** combinaciones de `w,x,y,z` activa exactamente **una** de las 16 salidas (m0 a m15), correspondiente a su mini término.
@@ -187,19 +192,49 @@ B1'--+----|
 Se usa un decodificador **3 a 8** (entradas x,y,z) y se combinan las salidas correspondientes mediante compuertas OR:
 
 ```
-          +----------------+
-     x ---|0              0|
-     y ---|1              1|---\
-     z ---|2              2|----\
-          |                3|-----\----OR----> S
-          |                4|-----/
-          |                5|----/
-          |                6|
-          |                7|---+----\
-          +----------------+    |     \
-                                 |      \--OR----> C
-                  m1,m2,m4,m7 --/------/
-                  m3,m5,m6,m7 -----------/
+Decodificador 3 a 8 aplicado al Full Adder (S y C)
+
+     x,y,z
+       │
+       ▼
+┌────────────────┐
+│                 │
+│   DECODIFICADOR │
+│      3 a 8      │
+│                 ├── m0 ──  (no se usa)
+│                 ├── m1 ──┐
+│                 ├── m2 ──┼─┐
+│                 ├── m3 ──┼─┼─┐
+│                 ├── m4 ──┼─┼─┼─┐
+│                 ├── m5 ──┼─┼─┼─┼─┐
+│                 ├── m6 ──┼─┼─┼─┼─┼─┐
+│                 ├── m7 ──┼─┼─┼─┼─┼─┼─┐
+└────────────────┘         │ │ │ │ │ │ │
+                            │ │ │ │ │ │ │
+              ┌─────────────┘ │ │ │ │ │ │
+              │  ┌─────────────┘ │ │ │ │
+              │  │  ┌─────────────────┘ │
+              │  │  │                   │
+              ▼  ▼  ▼                   │
+           ┌───────────┐                │
+   m1 ────►│           │                │
+   m2 ────►│    OR     ├──── S          │
+   m4 ────►│  (4 in)   │                │
+   m7 ────►│           │                │
+           └───────────┘                │
+                  ▲                     │
+                  └──── m7 (compartido) ┘
+                            │  │  │
+              ┌──────────────┘  │  │
+              │  ┌─────────────────┘
+              │  │
+              ▼  ▼
+           ┌───────────┐
+   m3 ────►│           │
+   m5 ────►│    OR     ├──── C
+   m6 ────►│  (4 in)   │
+   m7 ────►│           │
+           └───────────┘
 ```
 
 > El mini término `m7` se reutiliza (se conecta a ambas compuertas OR), ya que `xyz=111` produce tanto `S=1` como `C=1`.
@@ -212,18 +247,19 @@ Se usa un decodificador **3 a 8** (entradas x,y,z) y se combinan las salidas cor
 
 ## Multiplexor
 
-> Multiplexor siempre tiene 1 salida, pero puede tener 2^n entradas
+> Multiplexor siempre tiene 1 salida, pero puede tener 2^n entradas.
 
 Para el caso de 2 entradas, conecta un canal según entre GND o VCC, y ese estado es lo que determina cuál canal es el que envía la información.
 
 ```
-   I0 ---\
-          \  9
-           >MUX>---- Y
-          /  7
-   I1 ---/
-           |
-           S
+   I0 ───┐
+         │   ┌─────┐
+         └───┤     │
+             │ MUX ├──── Y
+         ┌───┤     │
+   I1 ───┘   └──┬──┘
+                 │
+                 S
 ```
 
 ### Tipos de multiplexor según la cantidad de variables selectoras
@@ -236,20 +272,21 @@ Para el caso de 2 entradas, conecta un canal según entre GND o VCC, y ese estad
 | 4 | 16 | MUX 16 a 1 |
 
 ```
-   4 a 1                         8 a 1
- I0 --|0        |            I0 --|0        |
- I1 --|1       Y|--> Y       I1 --|1       Y|--> Y
- I2 --|2        |            I2 --|2        |
- I3 --|3        |            I3 --|3        |
-      |S1 S0    |            I4 --|4        |
-        |  |                 I5 --|5        |
-        A  B                 I6 --|6        |
-                              I7 --|7        |
-                                   |S2 S1 S0 |
-                                     |  |  |
+         4 a 1                              8 a 1
+   ┌────────────────┐                 ┌────────────────┐
+I0─┤0               │              I0─┤0               │
+I1─┤1              Y├──> Y         I1─┤1              Y├──> Y
+I2─┤2               │              I2─┤2               │
+I3─┤3               │              I3─┤3               │
+   │     S1 S0       │              I4─┤4               │
+   └──────┬──┬───────┘              I5─┤5               │
+          │  │                      I6─┤6               │
+          A  B                      I7─┤7               │
+                                        │   S2 S1 S0     │
+                                        └────┬──┬──┬─────┘
 ```
 
-### Paso 1: Tabla de verdad
+### Paso 1: Tabla de verdad (método general)
 
 Para implementar una función con un MUX, se parte de su tabla de verdad completa, pero en vez de usar **todas** las variables como selectoras, se dejan `n-1` variables como selectoras (S2,S1,S0) y la **última variable** (residual) se deja libre: su valor en cada fila determina qué se conecta a cada canal de entrada (`0`, `1`, la variable, o su complemento).
 
@@ -324,4 +361,87 @@ Gnd --------|----|----+-----------|--+     |        |
                                     x       y       z
 ```
 
+# =========================================
+# COMPARADORES: FORMAS ALTERNATIVAS DE DISEÑO
+# =========================================
+
+Recordando el comparador de 2 bits (`A = A2A1`, `B = B2B1`, `F=1` si `A ≥ B`):
+
+**F(A2,A1,B2,B1) = Σm(0,4,5,8,9,10,12,13,14,15)**
+
+## Forma 1: Con compuertas (Mapa de Karnaugh)
+> Ya desarrollada anteriormente: `F = A2A1 + B2'B1' + A2B2' + A1B2'B1 + A2B2B1'`
+
+## Forma 2: Con Decodificador (4 a 16) + OR
+
+- Se usa un decodificador de 4 entradas (A2,A1,B2,B1) y 16 salidas (m0 a m15).
+- Se conectan a una compuerta OR únicamente las salidas correspondientes a los minitérminos donde `F=1`: **m0, m4, m5, m8, m9, m10, m12, m13, m14, m15**.
+
+```
+                     Decodificador 4 a 16
+                 ┌──────────────────────────┐
+      A2 ────────┤0             m0  ├───────┐
+      A1 ────────┤1             m1  │       │
+      B2 ────────┤2             m2  │       │
+      B1 ────────┤3             m3  │       │
+                 │              m4  ├───────┤
+                 │              m5  ├───────┤
+                 │              m6  │       │
+                 │              m7  │       │      ┌────┐
+                 │              m8  ├───────┼──────┤    │
+                 │              m9  ├───────┼──────┤ OR ├──── F
+                 │             m10  ├───────┼──────┤    │
+                 │             m11  │       │      └────┘
+                 │             m12  ├───────┤
+                 │             m13  ├───────┤
+                 │             m14  ├───────┤
+                 │             m15  ├───────┘
+                 └──────────────────────────┘
+```
+
+> Con Decodificador **no hace falta simplificar con Karnaugh**: basta con identificar en la tabla de verdad qué minitérminos dan `F=1` y unirlos con una sola compuerta OR. Es el método más directo pero usa más hardware (2^n líneas siempre activas).
+
+## Forma 3: Con Multiplexor (8 a 1)
+
+- Se usan 3 de las 4 variables como selectoras (`S2=A2, S1=A1, S0=B2`) y la variable restante (`B1`) queda como **residual**.
+- Se agrupan los 16 renglones en 8 pares (uno por cada combinación de A2,A1,B2), y en cada par se observa cómo varía `F` según `B1`.
+
+| S2 S1 S0 (A2A1B2) | Fila B1=0 / B1=1 | F | Entrada asignada |
+|:--:|:--:|:--:|:--:|
+| 000 | m0 / m1 | 1 / 0 | **B1'** |
+| 001 | m2 / m3 | 0 / 0 | **0 (GND)** |
+| 010 | m4 / m5 | 1 / 1 | **1 (VCC)** |
+| 011 | m6 / m7 | 0 / 0 | **0 (GND)** |
+| 100 | m8 / m9 | 1 / 1 | **1 (VCC)** |
+| 101 | m10 / m11 | 1 / 0 | **B1'** |
+| 110 | m12 / m13 | 1 / 1 | **1 (VCC)** |
+| 111 | m14 / m15 | 1 / 1 | **1 (VCC)** |
+
+```
+             ┌──┤>o│── B1'
+             │
+  B1 ────────┘
+                                     8-1 MUX
+       B1' ─────┬─────────────────────────────────────┬────┬────┐
+       Gnd ─────┼───┬─────────────────────────────────┼────┤    │
+       Vcc ─────┼───┼───┬─────────────────────────────┼────┼────┤
+       Gnd ─────┼───┼───┼───┬─────────────────────────┼────┼────┼───┐
+       Vcc ─────┼───┼───┼───┼───┬─────────────────────┼────┼────┼───┼───┐
+       B1' ─────┼───┼───┼───┼───┼───┬─────────────────┼────┼────┼───┼───┼──┐
+       Vcc ─────┼───┼───┼───┼───┼───┼───┬─────────────┼────┼────┼───┼───┼──┼──┐
+       Vcc ─────┼───┼───┼───┼───┼───┼───┼───┬─────────┼────┼────┼───┼───┼──┼──┼──┐
+                 ▼   ▼   ▼   ▼   ▼   ▼   ▼   ▼
+               ┌───┬───┬───┬───┬───┬───┬───┬───┐
+               │ 0 │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │        MUX 8 a 1
+               └───┴───┴───┴───┴───┴───┴───┴───┘
+                             │
+                             Y ────────────────────────> F
+                             │
+                      ┌──────┴──────┐
+                     S2      S1      S0
+                      │       │       │
+                     A2      A1      B2
+```
+
+> Igual que en el ejemplo de multiplexor, con **un solo inversor** para generar `B1'` y cableado a `Vcc`/`Gnd`, se implementa el comparador completo sin necesidad de compuertas AND/OR adicionales.
 > Con este cableado, la función `F(w,x,y,z)` queda implementada con un **único inversor** (para obtener `w'`) más el MUX de 8 a 1, sin necesidad de compuertas AND/OR adicionales.
