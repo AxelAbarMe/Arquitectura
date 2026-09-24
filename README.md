@@ -14,7 +14,8 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 - [Semana 06 { Mapa K4 }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana06/MapaK4.md) — Mapa K de 4 variables y Mapas utilizando "Don't Care"
 - [Semana 07 { Compuertas }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana07/CompuertasNAND.md) — Compuertas NAND, half y full adder
 - [Semana 08 { Comparadores }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana08/Comparadores.md) — Comparadores, codificadores y multiplexores
-- [Semana 09 {  }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana09/Pendiente.md) — 
+- [Semana 09 { Circuitos Secuenciales }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana09/CircuitosSecuenciales.md) — Multiplexor y circuitos secuenciales
+- [Semana 10 {  }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6010/Pendiente.md) — 
 
 ---
 
