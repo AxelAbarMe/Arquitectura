@@ -53,5 +53,6 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 - [Tarea 3](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%203/Solucion.md)
 - [Tarea 4](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%204/Solucion.md)
 - [Tarea 5](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%205/Solucion.md)
+- [Tarea 6](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%206/Solucion.md)
 
 ---
