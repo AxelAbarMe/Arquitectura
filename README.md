@@ -15,7 +15,9 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 - [Semana 07 { Compuertas }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana07/CompuertasNAND.md) — Compuertas NAND, half y full adder
 - [Semana 08 { Comparadores }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana08/Comparadores.md) — Comparadores, codificadores y multiplexores
 - [Semana 09 { Circuitos Secuenciales }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana09/CircuitosSecuenciales.md) — Multiplexor y circuitos secuenciales
-- [Semana 10 {  }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6010/Pendiente.md) — 
+- [Semana 10 { Circuitos Secuenciales sincronicos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6010/SecuencialesSincronicos.md) — Flip-Flop JK sincronicos para contadores
+- [Semana 11 { Circuitos Secuenciales asincronicos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6011/SecuencialesAsincronicos.md) — Flip-Flop JK asincronicos para contadores
+- [Semana 12 { Arquitectura 8086/8088 }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6012/Arquitecturas.md) — Von Neumann, memoria y 8086/8088
 
 ---
 
@@ -24,8 +26,6 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 
 - [Práctica 1](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%201.md)
 - [Práctica 2](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%202.md)
-- [Práctica 3](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%203.md)
-- [Práctica 4](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Practicas/Practica%204.md)
 
 ---
 
@@ -33,15 +33,6 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 > Avances y entregas del proyecto del curso.
 
 - [Proyecto 1](https://github.com/AxelAbarMe/Arquitectura/tree/main/General/Proyecto/Proyecto%201)
-- [Proyecto 2](https://github.com/AxelAbarMe/Arquitectura/tree/main/General/Proyecto/Proyecto%202)
-
----
-
-## ❓ Quiz
-> Enunciados de quices del curso.
-
-- [Quiz 1](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Quiz/Quiz1.md) - Gray - BCD - Binario 
-- [Quiz 2](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Quiz/Quiz2.md) - 
 
 ---
 
@@ -54,5 +45,6 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 - [Tarea 4](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%204/Solucion.md)
 - [Tarea 5](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%205/Solucion.md)
 - [Tarea 6](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%206/Solucion.md)
+- [Tarea 7](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Tareas/Tarea%207/Solucion.md)
 
 ---
