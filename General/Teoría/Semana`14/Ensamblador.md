@@ -1,7 +1,3 @@
-Voy a simular los ejercicios de los Word en Python para verificar los procedimientos y resultados antes de escribir el resumen.
-
-Pila verificada contra la captura del emulador. Ahora simulo el ejercicio de desplazamientos y el lazo.
-
 # Assembly: Pila (Stack), PUSH/POP, desplazamientos, rotaciones, LOOP y saltos
 
 ---
