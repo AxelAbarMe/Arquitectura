@@ -26,8 +26,8 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 ## 🗂️ Resúmenes de Parciales
 > Resúmenes generales para el estudio de cada examen parcial.
 
-- [Resumen I Parcial](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/ResumenIParcial.md)
-- [Resumen II Parcial](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/ResumenIIParcial.md)
+- [Resumen I Parcial](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/ResumenIParcial.md)
+- [Resumen II Parcial](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/ResumenIParcial.md)
 
 ---
 
