@@ -1,9 +1,3 @@
-Voy a leer el examen final subido para identificar qué tipos de ejercicios se piden.
-
-Sigo revisando las imágenes del examen (me faltan las 5 y 6) antes de escribir el resumen.
-
-Pila resuelta y verificada. Ahora el ejercicio 3 (desplazamientos, LOOP y saltos) para los tres grupos.
-
 # Guía de resolución del Examen Final: Mapa de memoria, Pila con mapa inicial y Desplazamientos/LOOP
 
 ---
