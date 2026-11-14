@@ -9,15 +9,25 @@ Repositorio de teoría, prácticas, tareas y proyecto del curso de Arquitectura 
 
 - [Semana 02 { Sistemas Numéricos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana02/SistemasN%C3%BAmericos.md) — Sistemas de numeración y sus conversiones.
 - [Semana 03 { Complemento y Códigos Binarios }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana03/Complemento_CodigosBinarios.md) — Complemento a 1, complemento a 2 y códigos binarios.
-- [Semana 04 { ASCII y ÁlgebraBool }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana04/ASCII-AlgBool.md) — Código ASCII y Álgebra Booleana (con DigitalWork).
+- [Semana 04 { ASCII y Álgebra Booleana }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana04/ASCII-AlgBool.md) — Código ASCII y Álgebra Booleana (con DigitalWork).
 - [Semana 05 { Diseño Lógico }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana05/Dise%C3%B1o%20logico.md) — Diseño Lógico y Mapas de Karnaugh.
-- [Semana 06 { Mapa K4 }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana06/MapaK4.md) — Mapa K de 4 variables y Mapas utilizando "Don't Care"
-- [Semana 07 { Compuertas }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana07/CompuertasNAND.md) — Compuertas NAND, half y full adder
-- [Semana 08 { Comparadores }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana08/Comparadores.md) — Comparadores, codificadores y multiplexores
-- [Semana 09 { Circuitos Secuenciales }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana09/CircuitosSecuenciales.md) — Multiplexor y circuitos secuenciales
-- [Semana 10 { Circuitos Secuenciales sincronicos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6010/SecuencialesSincronicos.md) — Flip-Flop JK sincronicos para contadores
-- [Semana 11 { Circuitos Secuenciales asincronicos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6011/SecuencialesAsincronicos.md) — Flip-Flop JK asincronicos para contadores
-- [Semana 12 { Arquitectura 8086/8088 }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6012/Arquitecturas.md) — Von Neumann, memoria y 8086/8088
+- [Semana 06 { Mapa K4 }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana06/MapaK4.md) — Mapa K de 4 variables y Mapas utilizando "Don't Care".
+- [Semana 07 { Compuertas }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana07/CompuertasNAND.md) — Compuertas NAND, half y full adder.
+- [Semana 08 { Comparadores }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana08/Comparadores.md) — Comparadores, codificadores y multiplexores.
+- [Semana 09 { Circuitos Secuenciales }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana09/CircuitosSecuenciales.md) — Multiplexor y circuitos secuenciales.
+- [Semana 10 { Circuitos Secuenciales Sincrónicos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6010/SecuencialesSincronicos.md) — Flip-Flop JK sincrónicos para contadores.
+- [Semana 11 { Circuitos Secuenciales Asincrónicos }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6011/SecuencialesAsincronicos.md) — Flip-Flop JK asincrónicos para contadores.
+- [Semana 12 { Arquitectura 8086/8088 }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6012/Arquitecturas.md) — Von Neumann, memoria y 8086/8088.
+- [Semana 13 { Memoria - Assembly }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6013/Memoria.md) — Ejercicios de memoria e introducción a assembly.
+- [Semana 14 { Lenguaje Ensamblador }](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/Semana%6014/Ensamblador.md) — Pila (PUSH/POP), desplazamientos y rotaciones, LOOP y saltos condicionales.
+
+---
+
+## 🗂️ Resúmenes de Parciales
+> Resúmenes generales para el estudio de cada examen parcial.
+
+- [Resumen I Parcial](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/ResumenIParcial.md)
+- [Resumen II Parcial](https://github.com/AxelAbarMe/Arquitectura/blob/main/General/Teor%C3%ADa/ResumenIIParcial.md)
 
 ---
 
